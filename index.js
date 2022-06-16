@@ -18,6 +18,7 @@ app.use(express.json());
 const uri = `mongodb+srv://${[process.env.USER_NAME]}:${process.env.USER_PASS}@mongodot.anhqpqi.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
+// verify jwt start
 function verifyJWT(req, res, next) {
   const authHeader = req.headers.authorization;
   if (!authHeader) {
@@ -32,11 +33,10 @@ function verifyJWT(req, res, next) {
     next();
   });
 }
-
+// run function start
 async function run() {
 
   try {
-
     // client and collection sector
     await client.connect();
     const usersCollection = client.db("studentsCollection").collection("users");
@@ -53,13 +53,10 @@ async function run() {
         res.status(403).send({ message: 'forbidden' });
       }
     }
-
-
     // home server title 
     app.get('/', (req, res) => {
       res.send('SchoolMap is Running Successfully.')
     })
-
     // user get
     app.get("/users", async (req, res) => {
       const users = await usersCollection.find({}).toArray();
@@ -97,7 +94,7 @@ async function run() {
     });
   }
 
-// set Finlay
+  // set Finlay
   finally {
   }
 }
