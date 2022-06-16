@@ -39,10 +39,9 @@ async function run() {
 
   try {
 
-    // client and collection sector here
+    // client and collection sector
     await client.connect();
     const usersCollection = client.db("studentsCollection").collection("users");
-    const studentsCollection = client.db("studentsCollection").collection("students");
 
     console.log('db connected');
     // verifyAdmin section
