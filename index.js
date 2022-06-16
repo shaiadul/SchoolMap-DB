@@ -15,8 +15,6 @@ app.use(express.json());
 
 
 // heroku issues
-
-
 const uri = `mongodb+srv://${[process.env.USER_NAME]}:${process.env.USER_PASS}@mongodot.anhqpqi.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
@@ -104,8 +102,7 @@ async function run() {
   }
 }
 run().catch(console.dir);
-
-
+// set listen
 app.listen(port, () => {
   console.log('SchoolMap server Running');
 })
