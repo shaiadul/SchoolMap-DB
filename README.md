@@ -1,6 +1,7 @@
 # SchoolMap:blue_heart:
 
 ## Live Site Link: https://schoolmap-7f024.web.app/
+## Admin Gmail and pass = user@gmail.com (pass= 123456)
 
 ### description:- SchoolMap is an admin login dashboard project. in this project, only an admin can see the dashboard for visits. A normal user only sees the Home page and if the role is not an admin he can not see anything of this website. What can I do pointed blew-
 
